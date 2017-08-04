@@ -135,7 +135,7 @@ def calculate_ec2_ris(session, results):
         if reserved_instance['Scope'] == 'Availability Zone':
             az = reserved_instance['AvailabilityZone']
         else:
-            az = 'All'
+            az = 'All ' + session.region_name
 
         instance_type = reserved_instance['InstanceType']
         # check if VPC/Classic reserved instance
